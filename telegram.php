@@ -10,12 +10,12 @@ $token = "1058710114:AAFrk3XHRPy-Yd2CVIgkvE8iQewxfZsgkuo";
 $chat_id = "-381635827";
 $arr = array(
   'Имя пользователя: ' => $name,
-  'Телефон: ' => $phone,
+  'Телефон: +' => $phone,
   'Email' => $email
 );
 
 foreach($arr as $key => $value) {
-  $txt .= "<b>".$key."</b> ".$value."%0A";
+  $txt.= "<b>".$key."</b> ".$value."%0A";
 };
 
 $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
@@ -25,4 +25,3 @@ if ($sendToTelegram) {
 } else {
   echo "Error";
 }
-?>
